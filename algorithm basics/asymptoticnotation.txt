@@ -1,0 +1,18 @@
+1. O(1)     ->  Constant
+2. O(n)     ->  Linear
+3. O(n2)    ->  Quadratic
+4. O(n3) 	->  Cubic
+5. O(2n)    ->  Exponential
+6. O(logn) 	->  Logarithmic
+
+big-O :
+
+f(n) = O(g(n)) iff there exists a constant C and n-o(n not) such that f(n) <= C.g(n) for all n, n>=n-o  
+
+omega :
+
+f(n) = O(g(n)) iff there exists a constant C and n-o(n not) such that f(n) >= C.g(n) for all n, n>=n-o  
+
+theta :
+
+f(n) = O(g(n)) iff there exists a constant C1,C2 and n-o(n not) such that C1.g(n) <= f(n) <= C2.g(n) for all n, n>=n-o  
