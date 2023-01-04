@@ -43,6 +43,25 @@ void insertAtTail(LinkedList *&head, int val)
     temp->next = n; /*so, inserted at tail of the linked list*/
 }
 
+void insertAtPosition(LinkedList *&head, int val, int pos)
+{
+    LinkedList *n = new LinkedList(val);
+    if (pos == 1)
+    {
+        n->next = head;
+        head = n;
+        return;
+    }
+
+    LinkedList *temp = head;
+    for (int i = 0; i < pos - 2; i++)
+    {
+        temp = temp->next;
+    }
+    n->next = temp->next;
+    temp->next = n;
+}
+
 bool search(LinkedList *head, int key)
 {
     LinkedList *temp = head;
@@ -113,6 +132,8 @@ int main()
     display(head);
     search(head, 7) ? cout << "found" : cout << "not found" << endl;
     deleteAtHead(head);
+    display(head);
+    insertAtPosition(head, 5, 2);
     display(head);
     return 0;
 }

@@ -55,7 +55,24 @@ void insertAtTail(Node *&head, int val)
     temp->next = n;
     n->next = head; /*since its circular linked list, last element should point to the head*/
 }
+void insertAtPosition(Node *&head, int val, int pos)
+{
+    Node *n = new Node(val);
+    if (pos == 1)
+    {
+        n->next = head;
+        head = n;
+        return;
+    }
 
+    Node *temp = head;
+    for (int i = 0; i < pos - 2; i++)
+    {
+        temp = temp->next;
+    }
+    n->next = temp->next;
+    temp->next = n;
+}
 void display(Node *head)
 {
     Node *temp = head;
@@ -137,5 +154,7 @@ int main()
     deletion(head, 5); /*deletion of data in 3rd node*/
     display(head);
     search(head, 5) ? cout << "found" : cout << "Not found" << endl;
+    insertAtPosition(head, 3, 4);
+    display(head);
     return 0;
 }

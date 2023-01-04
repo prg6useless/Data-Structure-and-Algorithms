@@ -9,9 +9,10 @@ float EvaluatePostfix(string exp)
     stack<float> s;
     for (int i = 0; i < exp.length(); i++)
     {
+        // if expression is an operand
         if (exp[i] >= '0' && exp[i] <= '9')
             s.push(exp[i] - '0');
-        else
+        else // if expression is an operator
         {
             float operand2 = s.top();
             s.pop();
