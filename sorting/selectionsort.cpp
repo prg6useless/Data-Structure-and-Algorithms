@@ -34,6 +34,20 @@ void selectionSort(int arr[], int n)
             }
         }
     }
+
+    // for (int i = 0; i < n - 1; i++) // n-1 because we are comparing with next element
+    // {
+    //     int iMin = i;
+    //     for (int j = i + 1; j < n; j++)
+    //     {
+    //         if (arr[j] < arr[iMin])
+    //             iMin = j;
+    //     }
+    //     if (iMin != i)
+    //     {
+    //         swap(arr, iMin, i);
+    //     }
+    // }
 }
 
 int main()
@@ -44,7 +58,8 @@ int main()
 
     // for now, n = 6
     int n = 6;
-    int arr[n] = {78, 16, 45, 23, 12, 89};
+    // int arr[n] = {78, 16, 45, 23, 12, 89};
+    int arr[n] = {2, 8, 5, 3, 9, 4};
 
     cout << "Unsorted array is : ";
     for (int i = 0; i < 6; i++)
@@ -55,7 +70,7 @@ int main()
     selectionSort(arr, n);
 
     cout << endl;
-    cout << "Sorted array is : ";
+    cout << "Sorted array is   : ";
     for (int i = 0; i < 6; i++)
     {
         cout << arr[i] << " ";
