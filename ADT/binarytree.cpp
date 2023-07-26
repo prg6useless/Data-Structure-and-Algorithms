@@ -81,24 +81,39 @@ int CountInternalNodes(Tree *root)
 
 int main()
 {
-    Tree *root = new Tree(1);
+    // Tree *root = new Tree(1);
+
+    // pastquestions pg 24
+    Tree *root = new Tree(14);
 
     root->left = new Tree(2);
-    root->right = new Tree(3);
+    root->right = new Tree(11);
 
-    root->left->left = new Tree(4);
-    root->left->right = new Tree(5);
-    root->right->left = new Tree(6);
-    root->right->right = new Tree(7);
+    root->left->left = new Tree(1);
+    root->left->right = new Tree(3);
 
-    root->left->left->left = new Tree(8);
-    root->left->left->right = new Tree(9);
-    root->left->right->left = new Tree(10);
-    root->left->right->right = new Tree(11);
-    root->right->left->left = new Tree(12);
-    root->right->left->right = new Tree(13);
-    root->right->right->left = new Tree(14);
-    root->right->right->right = new Tree(15);
+    root->right->left = new Tree(10);
+    root->right->right = new Tree(30);
+
+    root->right->left->left = new Tree(7);
+    root->right->right->left = new Tree(40);
+
+    // root->left = new Tree(2);
+    // root->right = new Tree(3);
+
+    // root->left->left = new Tree(4);
+    // root->left->right = new Tree(5);
+    // root->right->left = new Tree(6);
+    // root->right->right = new Tree(7);
+
+    // root->left->left->left = new Tree(8);
+    // root->left->left->right = new Tree(9);
+    // root->left->right->left = new Tree(10);
+    // root->left->right->right = new Tree(11);
+    // root->right->left->left = new Tree(12);
+    // root->right->left->right = new Tree(13);
+    // root->right->right->left = new Tree(14);
+    // root->right->right->right = new Tree(15);
 
     /*
                 1
@@ -118,7 +133,7 @@ int main()
     inorder(root);
     cout << endl;
     cout << "Postorder: ";
-    postorder(root); 
+    postorder(root);
     cout << endl;
     cout << "Number of nodes: " << CountNodes(root) << endl;
     cout << "Sum of nodes: " << SumNodes(root) << endl;

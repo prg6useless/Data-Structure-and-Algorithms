@@ -95,6 +95,26 @@ void inorderDisplay(BST *root)
     inorderDisplay(root->right);
 }
 
+void preorderDisplay(BST *root)
+{
+    if (root == NULL)
+        return;
+    cout << root->data << " ";
+
+    preorderDisplay(root->left);
+    preorderDisplay(root->right);
+}
+
+void postorderDisplay(BST *root)
+{
+    if (root == NULL)
+        return;
+
+    postorderDisplay(root->left);
+    postorderDisplay(root->right);
+    cout << root->data << " ";
+}
+
 int main()
 {
     BST *root = NULL;
@@ -108,6 +128,10 @@ int main()
         ? cout << "Found" << endl
         : cout << "Not Found" << endl;
     inorderDisplay(root);
+    cout << endl;
+    preorderDisplay(root);
+    cout << endl;
+    postorderDisplay(root);
     deleteBST(root, 3);
     cout << endl;
     inorderDisplay(root);
